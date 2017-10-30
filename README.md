@@ -12,22 +12,22 @@ docker pull opencobra/memote:latest
 
 ## Usage
 
-The container exposes the memote command line tool directly. If you run the container without any arguments you will see the base help message.
+The container exposes the memote command line tool. If you run the container without any arguments you will see the base help message.
 
 ```bash
 docker run opencobra/memote
 ```
 
+For now, the best way to have memote interact with files is to mount a local directory into the container. The only hurdle is that you may have to afterwards change the owner from `root` to your own user.
+
+```bash
+docker run -v ~/local/path/to/models/directory:/opt opencobra/memote memote run /opt/my-model.xml
+```
+
 **We may work on allowing you to pipe the model to the docker container. So in future you would be able to do the following:**
 
 ```bash
-my-model.xml > docker run opencobra/memote run
-```
-
-However, you would still not be able to easily access output files. For now the best way is to mount a local directory into the container. The only hurdle is that you may have to afterwards change the owner from `root` to your own user.
-
-```bash
-docker run -v ~/local/path/to/models/directory:/opt opencobra/memote run /opt/my-model.xml
+my-model.xml > docker run opencobra/memote memote run
 ```
 
 ## Contact
