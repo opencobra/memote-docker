@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "c3240cd054acd84646a72dda559e399eff588975a91fbf1f7e043b0ceed02d9e"
+            "sha256": "c2edc857043b7d65af0cad8ecf2e88a00c289898b45f4f86845e04445036b0d2"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -267,10 +267,10 @@
         },
         "jupyter-core": {
             "hashes": [
-                "sha256:63218bb5c1c0f3bba25027e1b51cf00a71ce2a1b06d1bb4bbb6e311492790125",
-                "sha256:a96b129e1641425bf057c3d46f4f44adce747a7d60107e8ad771045c36514d40"
+                "sha256:927d713ffa616ea11972534411544589976b2493fc7e09ad946e010aa7eb9970",
+                "sha256:ba70754aa680300306c699790128f6fbd8c306ee5927976cbe48adacf240c0b7"
             ],
-            "version": "==4.3.0"
+            "version": "==4.4.0"
         },
         "markupsafe": {
             "hashes": [
@@ -280,10 +280,10 @@
         },
         "memote": {
             "hashes": [
-                "sha256:65974657bdf43a25ba33363cd809eece78f7535d38ea5e6a1ceda38f6b403c80",
-                "sha256:87b0d11ff9b42d83e0b2e7a142d5e90e83ebba33aa3952eef5f4f51264e77bed"
+                "sha256:3d16521d6ce980764c89c524638d3a58ed867b614fb0cd652c87381171eb3114",
+                "sha256:052574e76215d2c8167e15c77f69dce751fec69863803c7870f840accfd4debd"
             ],
-            "version": "==0.4.5a0"
+            "version": "==0.4.6"
         },
         "mpmath": {
             "hashes": [
