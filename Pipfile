@@ -7,7 +7,7 @@ name = "pypi"
 
 [packages]
 
-memote = "==0.5.0"
+memote = "==0.5.1"
 
 
 [dev-packages]

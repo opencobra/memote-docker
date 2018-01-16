@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "6d71bf48e6e56e9eb00820b05870a91748731c0f89b5b9945a0a11b5191eeba8"
+            "sha256": "ed59e84918816005e09b985559fe3f917333a0f50f9fc2c4c96c57a7da3d6b59"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -297,10 +297,10 @@
         },
         "memote": {
             "hashes": [
-                "sha256:57a65cab67b22b0f9abd20b330f922642719b97336b075e39b22cdb4a93182c4",
-                "sha256:373dea2ef06a4102d00b2d9a8926b56f97f45ea0259841d94bbaee022b849bbf"
+                "sha256:669b2839a4845971099c3f6a8b6e0ba788c4bdca4fe7e58a8159e78aecf6b1d0",
+                "sha256:60c69f21493f47c7cc16641e30b7da737b036da9dd9e89032a482025849965ec"
             ],
-            "version": "==0.5.0"
+            "version": "==0.5.1"
         },
         "mpmath": {
             "hashes": [
