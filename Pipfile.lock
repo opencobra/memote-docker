@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "c99c47b31ae7e3799d69a5aa55f8e9c7bc0a24c9e567310d20d070f8c6e9ed49"
+            "sha256": "758dfa0d40e51591287923f981152b1fa871d211ea6a06c09d1a3e62c225b175"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -266,10 +266,10 @@
         },
         "memote": {
             "hashes": [
-                "sha256:1ded0be8a9068409f15cf0fa09398f7ef744f26d7f492e36598feaae3404b9fc",
-                "sha256:836d4ec97a42edcea6eff9df07991942f9d7cbcd88e03738d19f70228172edf7"
+                "sha256:1019a5e1742c2c9a41555c1f818d236c0cfd822b9367dc5775f67b3a3939bb62",
+                "sha256:a2d20acacf84a1053e094a8cb2bd87b4b9e83024b2db9676aa6f64834468327a"
             ],
-            "version": "==0.6.0"
+            "version": "==0.6.1"
         },
         "mpmath": {
             "hashes": [
@@ -359,9 +359,9 @@
         },
         "pygithub": {
             "hashes": [
-                "sha256:b6c1c0c1305b879b6c40b2ba957914b8ad26cd4549ac7a5e21339a0af0307b43"
+                "sha256:2e3e116a6f7f9986cecc9770be66451ed60015988151186fe97646df7f5e93cb"
             ],
-            "version": "==1.36"
+            "version": "==1.37"
         },
         "pyjwt": {
             "hashes": [
@@ -546,11 +546,11 @@
         },
         "travis-encrypt": {
             "hashes": [
-                "sha256:22968565cc81b76f4198bcae94a29384c406afef7c140fac9f34cb059f462e6d",
-                "sha256:3426f8e1d29a83bed6c511216feb853d35f0b778cffab8be8a58540c30b2f24a",
-                "sha256:d8e7ae7a68eccac02529cfeba7e617ab4a80136e027d42dd8b7457ee5d2f9474"
+                "sha256:a7c280f696bf2e2bacb2185f5de04a4a1d15ca5cc582742a52a823f5036ca573",
+                "sha256:da4dae402b6af1e5ef5de89e4209695dcb37fc01d4ebbb262d46c30b4e169c24",
+                "sha256:9890807e0112ee8befcd0f4db320e4b58b7d5d8c7af2b3f28b51b8667f37a1c9"
             ],
-            "version": "==0.9.1"
+            "version": "==1.0.0"
         },
         "travispy": {
             "hashes": [
