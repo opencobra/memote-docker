@@ -7,7 +7,7 @@ git:
 script:
 - docker build .
 before_deploy:
-- docker login -e=${DOCKER_EMAIL} -u=${DOCKER_USER} -p=${DOCKER_PASSWORD}
+- docker login -u=${DOCKER_USER} -p=${DOCKER_PASSWORD}
 deploy:
   provider: script
   script: "./push_to_hub_travis.sh"
