@@ -4,10 +4,10 @@ services:
 - docker
 git:
   depth: 2
-before_install:
-- docker login -e=${DOCKER_EMAIL} -u=${DOCKER_USER} -p=${DOCKER_PASSWORD}
 script:
 - docker build .
+before_deploy:
+- docker login -e=${DOCKER_EMAIL} -u=${DOCKER_USER} -p=${DOCKER_PASSWORD}
 deploy:
   provider: script
   script: "./push_to_hub_travis.sh"
