@@ -4,6 +4,6 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-memote = "==0.6.2a0"
+memote = "==0.7.0"
 
 [dev-packages]
