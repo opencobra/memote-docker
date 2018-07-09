@@ -1,18 +1,22 @@
 sudo: required
-language: minimal
+language: Python
+python: "3.6"
 services:
 - docker
 git:
   depth: 2
+branches:
+  only:
+  - master
+env:
+  global:
+  - IMAGE_REPO=opencobra/memote
+before_install:
+- echo "${DOCKER_PASSWORD}" | docker login -u="${DOCKER_USER}" --password-stdin
+install:
+- pip install requests
 script:
-- docker build .
-before_deploy:
-- docker login -u=${DOCKER_USER} -p=${DOCKER_PASSWORD}
-deploy:
-  provider: script
-  script: "./push_to_hub_travis.sh"
-  on:
-    tags: true
+- ./build_image.sh
 notifications:
   slack:
     secure: Ozb/x4D0G5yROY88zyPsGrFRRgLgruS0LziSlc7YfryGD0FofdE9dEGtxMR9YIezaC18sU0liumYet8ctCtnEWNglN7+v+aRvzfV0tSO731SFrayWF4GSJjUuJd3lyyvkUGV7A2VVlzMu23f7rNGQczE11jTxpWUWezGsz4mGPUr732pasYzBchySe/3d0pwE1IsxctWwf3aKk1qphcDul9pk2s9NcblwrnocntF4wjpnB/WVZODbsZNR1Lof3sbFglUj/dp5EKAlYjVb/0j/nMolDm7qGTpZEwLbeo08Q00PgqwM6Tx2Ek7RWaM22ysUcjSz3sWA1QDSLv3i0Jnr2F2oaFPOOIvDMYHNRcjYjK8QNk6IZr9Duk/o4OTF2Spb4pj5+oILy9swYg/ZSCyXIJ24tUHaNEtNHCgkY8Oca4q9SvAyPLnqYqKO3jHh7/RI93GDARVEl6QwogCEWKOQ7ngodFlmv3V8uWmUBnksldIiCeCwO303A9poK7Qh7HZIAuzd+Y34ky2vUR4Bda+C62klL4Fa3b3MNqO0VQwgUiz9lYquMpgblJYfkO9G9cYz8cUslncoMW7GRyLldXywcyiXidsxsCFgyP2c+y7Etk65uxX3I87nqI/XgG4fQpGb0pybvQgIAHr8+Cg2pY7zug6Vw9wo92EiWICFSz/b+w=
