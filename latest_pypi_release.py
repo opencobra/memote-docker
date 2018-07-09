@@ -17,9 +17,8 @@
 
 """Parse the latest memote package version from PyPI."""
 
-from packaging.version import parse
-
 import requests
+from packaging.version import parse
 
 
 def parse_latest(name):

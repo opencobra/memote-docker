@@ -13,8 +13,9 @@ env:
   - IMAGE_REPO=opencobra/memote
 before_install:
 - echo "${DOCKER_PASSWORD}" | docker login -u="${DOCKER_USER}" --password-stdin
+- pip install --upgrade pip setuptools wheel
 install:
-- pip install requests
+- pip install requests packaging
 script:
 - ./build_image.sh
 notifications:

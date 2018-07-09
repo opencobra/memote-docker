@@ -27,7 +27,7 @@ latest=$(python latest_pypi_release.py)
 if docker_tag_exists "${IMAGE_REPO}" "${latest}"; then
     echo "Image ${IMAGE_REPO}:${latest} already exists. Nothing to do."
 else
-    docker build -t --build-arg RELEASE="${latest}" "${IMAGE_REPO}:${latest}" -t "${IMAGE_REPO}:latest" .
+    docker build --build-arg RELEASE="${latest}" -t "${IMAGE_REPO}:${latest}" -t "${IMAGE_REPO}:latest" .
     docker push "${IMAGE_REPO}:${latest}"
     docker push "${IMAGE_REPO}:latest"
 fi
