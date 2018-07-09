@@ -15,7 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-set -eux -o pipefail
+set -eu -o pipefail
 
 # Adapted from https://stackoverflow.com/a/39731444.
 function docker_tag_exists() {
@@ -27,6 +27,7 @@ latest=$(python latest_pypi_release.py)
 if docker_tag_exists "${IMAGE_REPO}" "${latest}"; then
     echo "Image ${IMAGE_REPO}:${latest} already exists. Nothing to do."
 else
+    echo "Building image ${IMAGE_REPO}:${latest}."
     docker build --build-arg RELEASE="${latest}" -t "${IMAGE_REPO}:${latest}" -t "${IMAGE_REPO}:latest" .
     docker push "${IMAGE_REPO}:${latest}"
     docker push "${IMAGE_REPO}:latest"
