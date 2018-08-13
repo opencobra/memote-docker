@@ -18,7 +18,7 @@ WORKDIR "${HOME}"
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-        git-core \
+        git-core openssh-client \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
