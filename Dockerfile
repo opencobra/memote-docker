@@ -17,6 +17,7 @@ RUN chown -R "${TEST_USER}:${TEST_USER}" "${HOME}"
 WORKDIR "${HOME}"
 
 RUN apt-get update \
+    && apt-get install --yes --only-upgrade openssl ca-certificates \
     && apt-get install -y --no-install-recommends \
         git-core openssh-client \
     && apt-get clean \
