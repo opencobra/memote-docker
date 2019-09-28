@@ -19,7 +19,7 @@ set -eu -o pipefail
 
 # Adapted from https://stackoverflow.com/a/39731444.
 function docker_tag_exists() {
-    curl --silent -f -lSL "https://index.docker.io/v1/repositories/${1}/tags/${2}" &> /dev/null
+    curl --silent --fail --list-only --show-error --location "https://index.docker.io/v1/repositories/${1}/tags/${2}" &> /dev/null
 }
 
 
@@ -28,7 +28,7 @@ if docker_tag_exists "${IMAGE_REPO}" "${latest}"; then
     echo "Image ${IMAGE_REPO}:${latest} already exists. Nothing to do."
 else
     echo "Building image ${IMAGE_REPO}:${latest}."
-    docker build --build-arg RELEASE="${latest}" -t "${IMAGE_REPO}:${latest}" -t "${IMAGE_REPO}:latest" .
+    docker build --build-arg RELEASE="${latest}" --tag "${IMAGE_REPO}:${latest}" --tag "${IMAGE_REPO}:latest" .
     docker push "${IMAGE_REPO}:${latest}"
     docker push "${IMAGE_REPO}:latest"
 fi
