@@ -17,8 +17,10 @@ RUN chown -R "${TEST_USER}:${TEST_USER}" "${HOME}"
 WORKDIR "${HOME}"
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
+    && apt-get install --yes --no-install-recommends \
+        ca-certificates \
         git-core \
+        openssl \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
