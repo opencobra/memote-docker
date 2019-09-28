@@ -22,7 +22,7 @@ RUN set -eux \
         openssl \
     && pip install --upgrade pip setuptools wheel \
     && pip install "memote==${RELEASE}" \
-    && rm -rf /root/.cache/pip
+    && rm -rf /root/.cache/pip \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
