@@ -20,6 +20,7 @@ RUN set -eux \
         ca-certificates \
         git-core \
         openssl \
+        openssh-client \
     && pip install --upgrade pip setuptools wheel \
     && pip install "memote==${RELEASE}" \
     && rm -rf /root/.cache/pip \
