@@ -1,18 +1,18 @@
 FROM python:3.6-slim
 
 ENV PYTHONUNBUFFERED=1
-ENV TEST_USER=memote
-ENV HOME="/home/${TEST_USER}"
 
+ARG USER_=memote
 ARG UID=1000
 ARG GID=1000
-ARG RELEASE
 
-RUN groupadd --system --gid "${GID}" "${TEST_USER}" \
+ENV HOME="/home/${USER_}"
+
+RUN groupadd --system --gid "${GID}" "${USER_}" \
     && useradd --system --create-home --home-dir "${HOME}" \
-        --uid "${UID}" --gid "${TEST_USER}" "${TEST_USER}"
+        --uid "${UID}" --gid "${USER_}" "${USER_}"
 
-RUN chown -R "${TEST_USER}:${TEST_USER}" "${HOME}"
+RUN chown -R "${USER_}:${USER_}" "${HOME}"
 
 RUN set -eux \
     && apt-get update \
@@ -22,13 +22,18 @@ RUN set -eux \
         openssl \
         openssh-client \
     && pip install --upgrade pip setuptools wheel \
-    && pip install "memote==${RELEASE}" \
+    && pip install memote \
     && rm -rf /root/.cache/pip \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 WORKDIR "${HOME}"
 
-USER "${TEST_USER}"
+# Allow any user ID to run memote in the working directory.
+RUN set -eux \
+    && chmod o+rx /usr/bin/* /usr/local/bin/* \
+    && chmod -R a+rwx "${HOME}"
+
+USER "${USER_}"
 
 CMD ["memote", "-h"]
