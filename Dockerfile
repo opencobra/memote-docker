@@ -22,10 +22,17 @@ RUN set -eux \
         openssl \
         openssh-client \
     && pip install --upgrade pip setuptools wheel \
-    && pip install memote \
     && rm -rf /root/.cache/pip \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+WORKDIR /opt
+
+COPY requirements.* /opt/
+
+RUN set -eux \
+    && pip install -r requirements.txt \
+    && rm -rf /root/.cache/pip
 
 WORKDIR "${HOME}"
 
