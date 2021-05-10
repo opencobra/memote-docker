@@ -21,6 +21,7 @@ RUN set -eux \
         git-core \
         openssl \
         openssh-client \
+        procps \
     && pip install --upgrade pip setuptools wheel \
     && rm -rf /root/.cache/pip \
     && apt-get clean \
