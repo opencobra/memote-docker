@@ -1,5 +1,7 @@
-FROM python:3.6-slim
+ARG TAG=3.11-slim
+FROM python:${TAG}
 
+ENV DEBIAN_FRONTEND=noninteractive
 ENV PYTHONUNBUFFERED=1
 
 ARG USER_=memote
@@ -32,7 +34,7 @@ WORKDIR /opt
 COPY requirements.* /opt/
 
 RUN set -eux \
-    && pip install -r requirements.txt \
+    && pip install --no-deps --requirement requirements.txt \
     && rm -rf /root/.cache/pip
 
 WORKDIR "${HOME}"
