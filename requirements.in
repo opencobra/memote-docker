@@ -1,2 +1,3 @@
-memote ==0.15.1
 highspy ~=1.5
+memote ==0.16.0
+osqp ~=0.6
