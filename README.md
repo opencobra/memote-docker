@@ -22,7 +22,7 @@ docker run opencobra/memote
 ```
 
 For now, the best way to have memote interact with files is to mount a local
-directory into the container. The only hurdle is that you may have to afterwards
+directory into the container. The only hurdle is that you may have to afterward
 change the permissions of the output file to your own user.
 
 ```bash
@@ -49,6 +49,7 @@ better software for everyone.
 
 ## Copyright
 
+- Copyright © 2017-2023, openCOBRA.
 - Copyright (c) 2017, Novo Nordisk Foundation Center for Biosustainability,
   Technical University of Denmark.
 - Free software: [Apache Software License 2.0](LICENSE)
